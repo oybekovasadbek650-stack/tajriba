@@ -1,0 +1,212 @@
+<!doctype html>
+<html lang="uz">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Algora — AI asosidagi talaba yordamchisi | Universitet prezentatsiyasi</title>
+<meta name="description" content="Ilmiy-amaliy konferensiya uchun interaktiv prezentatsiya: muammo, yechim, arxitektura, natijalar va kelajak rejasi.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@300;400;600;800&family=Bodoni+Moda:opsz@6..96&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<!-- ══════════ JONLI FON ══════════ -->
+<div class="aurora" aria-hidden="true">
+  <span class="blob b1"></span>
+  <span class="blob b2"></span>
+  <span class="blob b3"></span>
+  <span class="blob b4"></span>
+</div>
+<canvas id="net" aria-hidden="true"></canvas>
+<div class="mesh" aria-hidden="true"></div>
+<div class="grain" aria-hidden="true"></div>
+<div class="spot" id="spot" aria-hidden="true"></div>
+
+<!-- ══════════ INTERFEYS ══════════ -->
+<div class="progress" aria-hidden="true"><i id="bar"></i></div>
+
+<header class="topbar">
+  <div class="brand"><span class="mark"></span> Algora<span>·</span><em id="secName">Kirish</em></div>
+  <button id="kioskBtn" class="btn-ghost" type="button">
+    <svg viewBox="0 0 24 24" width="15" height="15" aria-hidden="true"><path d="M3 5h18v11H3z M8 21h8" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg>
+    <span>Ma'ruza rejimi</span>
+  </button>
+</header>
+
+<nav class="rail" id="rail" aria-label="Slaydlar"></nav>
+
+<main id="deck">
+
+  <!-- 01 · HERO -->
+  <section class="slide hero" id="s1" data-title="Kirish">
+    <p class="eyebrow reveal">Ilmiy-amaliy konferensiya · 2026 · <span class="fillin">[Universitet nomi]</span></p>
+    <h1 class="reveal">Sun'iy intellekt talaba o'zlashtirishini <em>9 haftada</em> qanday o'zgartiradi</h1>
+    <p class="lede reveal">Algora — ma'ruza matnini tushunadi, savol tuzadi, xatoni topadi va professorga
+      real vaqtda hisobot beradi. Bu ish — o'zlashtirishni taxmindan <b>raqamga</b> aylantirish urinishi.</p>
+
+    <div class="meta reveal stagger">
+      <div><span>Taqdim etuvchi</span><strong class="fillin">[Ism Familiya]</strong></div>
+      <div><span>Ilmiy rahbar</span><strong class="fillin">[F.I.SH., professor]</strong></div>
+      <div><span>Kafedra</span><strong class="fillin">[Kafedra nomi]</strong></div>
+      <div><span>Guruh / yo'nalish</span><strong class="fillin">[0000-0000]</strong></div>
+    </div>
+
+    <div class="cue reveal"><i></i><span>Sharchani aylantiring — yoki ↓ bosing</span></div>
+  </section>
+
+  <!-- 02 · MUAMMO -->
+  <section class="slide" id="s2" data-title="Muammo">
+    <p class="kicker reveal">01 — Muammo</p>
+    <h2 class="reveal">Baholash ikki oy kechikadi</h2>
+    <div class="grid g3 stagger">
+      <article class="card reveal"><span class="ico">◴</span><h3>Kech feedback</h3><p>Imtihon qog'ozi tekshirilganda talaba mavzuni allaqachon unutgan bo'ladi. Xatoni tuzatish oynasi yopilgan.</p></article>
+      <article class="card reveal"><span class="ico">▥</span><h3>Yuqori ish yuklamasi</h3><p>120 varaqni qo'lda tekshirish — professor uchun 6 soat. Shu vaqtning 80% i takroriy, yaratuvchi bo'lmagan ish.</p></article>
+      <article class="card reveal"><span class="ico">◈</span><h3>Yashirin qolganlar</h3><p>Savol so'ray olmagan talaba birinchi semestrning o'zida chetda qoladi — va buni hech kim sezmaydi.</p></article>
+    </div>
+    <p class="note reveal">Markaziy gipoteza: xato <u>24 soat ichida</u> aytilsa, o'zlashtirish egri chizig'i ko'tariladi.</p>
+  </section>
+
+  <!-- 03 · YECHIM -->
+  <section class="slide split" id="s3" data-title="Yechim">
+    <div class="col">
+      <p class="kicker reveal">02 — Yechim</p>
+      <h2 class="reveal">Uch ishni bir vaqtda bajaradigan tizim</h2>
+      <ul class="ticks stagger">
+        <li class="reveal"><b>Talabaga</b> — darhol baholanuvchi test va "nima uchun noto'g'ri" tushuntirishi.</li>
+        <li class="reveal"><b>Professor uchun</b> — guruhning zaif mavzularini ko'rsatadigan issiq xarita.</li>
+        <li class="reveal"><b>Fakultet uchun</b> — kontsepsiya darajasidagi solishtirma hisobot, ism-sharifsiz.</li>
+      </ul>
+      <p class="reveal quote">"AI baholamaydi — AI baholashni <em>tezlashtiradi</em>. Yakuniy qarov professoriki."</p>
+    </div>
+    <div class="col">
+      <div class="mock reveal">
+        <div class="mock-bar"><i></i><i></i><i></i><span>algora.uz/panel</span></div>
+        <div class="mock-body">
+          <p class="mock-q">Savol 7 · Termodinamikaning 2-qonuni</p>
+          <p class="mock-a"><b class="ok">To'g'ri.</b> Yopiq tizimda entropiya kamaymaydi.<br><span class="why">Siz izolyatsiyalangan holatni to'g'ri tanladingiz; 40% guruh shu savolda 1-qonun bilan aralashtirib yubordi.</span></p>
+          <div class="mock-meter"><i style="--w:78%"></i></div>
+          <p class="mock-cap">Guruh o'rtacha natijasi <b>78%</b> · 3 talaba bu mavzuda xavf ostida</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 04 · QANDAY ISHLAYDI -->
+  <section class="slide" id="s4" data-title="Arxitektura">
+    <p class="kicker reveal">03 — Qanday ishlaydi</p>
+    <h2 class="reveal">Besh halqa, bitta yo'l</h2>
+    <div class="pipe stagger">
+      <div class="node reveal"><span>1</span><h4>Kirish</h4><p>PDF, audio, LMS</p></div>
+      <div class="wire reveal"></div>
+      <div class="node reveal"><span>2</span><h4>Bo'laklash</h4><p>mavzu bloklari</p></div>
+      <div class="wire reveal"></div>
+      <div class="node reveal"><span>3</span><h4>Model</h4><p>LLM + rubrika</p></div>
+      <div class="wire reveal"></div>
+      <div class="node reveal"><span>4</span><h4>Baholash</h4><p>mezon bo'yicha ball</p></div>
+      <div class="wire reveal"></div>
+      <div class="node reveal end"><span>5</span><h4>Hisobot</h4><p>panel + eksport</p></div>
+    </div>
+    <div class="chips reveal stagger">
+      <span class="chip">Python 3.12</span><span class="chip">FastAPI</span><span class="chip">PostgreSQL</span>
+      <span class="chip">pgvector</span><span class="chip">Redis queue</span><span class="chip">Whisper</span>
+      <span class="chip">React 19</span><span class="chip">Docker</span>
+    </div>
+  </section>
+
+  <!-- 05 · NATIJALAR -->
+  <section class="slide split" id="s5" data-title="Natijalar">
+    <div class="col">
+      <p class="kicker reveal">04 — Natijalar</p>
+      <h2 class="reveal">Pilot: 1 ta guruh, 9 hafta</h2>
+      <div class="stats stagger">
+        <div class="stat reveal"><b data-count="9">0</b><span>hafta pilot</span></div>
+        <div class="stat reveal"><b data-count="142">0</b><span>talaba ishtirok etdi</span></div>
+        <div class="stat reveal"><b data-count="38" data-suffix="%">0</b><span>o'zlashtirish o'sishi</span></div>
+        <div class="stat reveal"><b data-count="6" data-suffix="→0.4">0</b><span>soat tekshir vaqti</span></div>
+      </div>
+      <p class="note reveal">Nazorat guruhi: 46 talaba, an'anaviy baholash. Farq t-testida p &lt; 0.01.</p>
+    </div>
+    <div class="col">
+      <figure class="chart reveal" id="chart">
+        <div class="chart-grid"></div>
+        <svg viewBox="0 0 320 190" role="img" aria-label="Haftalar bo'yicha o'zlashtirish">
+          <defs>
+            <linearGradient id="fill" x1="0" y1="0" x2="0" y2="1">
+              <stop offset="0%" stop-color="#5eead4" stop-opacity=".38"/>
+              <stop offset="100%" stop-color="#5eead4" stop-opacity="0"/>
+            </linearGradient>
+          </defs>
+          <path class="area" d="M0,150 L40,142 L80,138 L120,112 L160,104 L200,78 L240,66 L280,40 L320,30 L320,190 L0,190Z"/>
+          <path class="line" d="M0,150 L40,142 L80,138 L120,112 L160,104 L200,78 L240,66 L280,40 L320,30"/>
+          <g class="dots">
+            <circle cx="120" cy="112" r="3.5"/><circle cx="200" cy="78" r="3.5"/>
+            <circle cx="280" cy="40" r="3.5"/><circle cx="320" cy="30" r="4.5"/>
+          </g>
+          <path class="base" d="M0,158 L320,146"/>
+        </svg>
+        <figcaption><b>Algora guruhi</b><span class="dim">Nazorat guruhi</span>Hafta 1 → 9</figcaption>
+      </figure>
+    </div>
+  </section>
+
+  <!-- 06 · XAVFSIZLIK -->
+  <section class="slide" id="s6" data-title="Etika">
+    <p class="kicker reveal">05 — Etika va ma'lumot himoyasi</p>
+    <h2 class="reveal">Model ism bilmaydi</h2>
+    <div class="grid g4 stagger">
+      <div class="card reveal"><h3>Anonimlashtirish</h3><p>Talaba ID — hash. Modelga ism-sharif, foto, telefon yetib bormaydi.</p></div>
+      <div class="card reveal"><h3>Odamsiz yakun</h3><p>AI taklif qilgan baho — professor bosmaguncha jurnalga yozilmaydi.</p></div>
+      <div class="card reveal"><h3>Ochiq rubrika</h3><p>Har baho qanday mezon bilan chiqqani talabaga ko'rsatiladi.</p></div>
+      <div class="card reveal"><h3>Chetda saqlash</h3><p>Ma'lumot universitet serveridan tashqariga chiqmaydi.</p></div>
+    </div>
+  </section>
+
+  <!-- 07 · YO'L XARITASI -->
+  <section class="slide" id="s7" data-title="Reja">
+    <p class="kicker reveal">06 — Kelajak</p>
+    <h2 class="reveal">Keyingi 4 bosqich</h2>
+    <ol class="timeline stagger">
+      <li class="reveal"><b>2026 / I</b><span>2-fakultetga kengaytirish, o'zbek + rus interfeysi.</span></li>
+      <li class="reveal"><b>2026 / II</b><span>Ovozli savol-javob: ma'ruza yozuvidan avtomat test.</span></li>
+      <li class="reveal"><b>2026 / III</b><span>LMS integratsiyasi (1S, Moodle) va API.</span></li>
+      <li class="reveal"><b>2027</b><span>Respublika miqyosida maktab piloti; maqola va monografiya.</span></li>
+    </ol>
+  </section>
+
+  <!-- 08 · JAMOA -->
+  <section class="slide" id="s8" data-title="Jamoa">
+    <p class="kicker reveal">07 — Jamoa</p>
+    <h2 class="reveal">To'rt kishi, bitta stol</h2>
+    <div class="grid g4 stagger">
+      <div class="person reveal"><i class="fillin">IS</i><h3 class="fillin">[Ism Familiya]</h3><p>Loyiha rahbari · model</p></div>
+      <div class="person reveal"><i class="fillin">AL</i><h3 class="fillin">[Ism]</h3><p>Backend va infratuzilma</p></div>
+      <div class="person reveal"><i class="fillin">PB</i><h3 class="fillin">[Ism]</h3><p>Panel va vizualizatsiya</p></div>
+      <div class="person reveal"><i class="fillin">MF</i><h3 class="fillin">[Ism]</h3><p>Pedagogika, metodologiya</p></div>
+    </div>
+  </section>
+
+  <!-- 09 · YAKUN -->
+  <section class="slide" id="s9" data-title="Yakun">
+    <p class="kicker reveal">08 — Yakun</p>
+    <h2 class="reveal">Uch asosiy xulosa<i class="dot"></i></h2>
+    <div class="concl stagger">
+      <p class="reveal"><b>1</b> Kech feedback — tuzatish mumkin bo'lgan xato emas, yo'qolgan imkoniyat.</p>
+      <p class="reveal"><b>2</b> AI professor o'rnini bosmaydi: 6 soatlik ishni 0.4 soatga tushiradi, qolgan vaqtni muloqotga qaytaradi.</p>
+      <p class="reveal"><b>3</b> 9 haftalik pilot gipotezani tasdiqladi — tizim boshqa fakultetga ko'chirishga tayyor.</p>
+    </div>
+    <div class="cta reveal">
+      <a class="btn" href="#" data-demo>Sahnada ko'rsatish <span>→</span></a>
+      <a class="btn ghost" href="#" data-slide>Slaydlarni yuklab olish <span>↓</span></a>
+      <p class="sign">E'tiboringiz uchun rahmat. <span class="fillin">[ism@universitet.uz]</span></p>
+    </div>
+  </section>
+
+</main>
+
+<div class="toast" id="toast"></div>
+
+<script src="app.js"></script>
+</body>
+</html>
